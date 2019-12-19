@@ -1,0 +1,13 @@
+applications:
+- name: mongos
+  buildpacks:
+  - https://github.com/cloudfoundry/apt-buildpack
+  - binary_buildpack
+  command: "./start.sh"
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  health-check-type: process
+  no-route: true
+  env:
+

@@ -1,0 +1,12 @@
+applications:
+- name: mongos
+  buildpacks:
+  - https://github.com/cloudfoundry/apt-buildpack
+  - binary_buildpack
+  command: /home/vcap/app/usr/bin/mongos --configdb foo/localhost
+  disk_quota: 1G
+  health-check-type: process
+  instances: 1
+  memory: 1G
+  no-route: true
+  stack: cflinuxfs3
